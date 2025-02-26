@@ -47,8 +47,7 @@ figure {
 
 figure img {
     width: 100%;
-    max-width: 1000px; /* Ensuring puffin image never gets cut off */
-    height: auto;
+    max-width: 1000px; 
     border: 5px solid #d9043d;
 }
 
@@ -63,7 +62,6 @@ aside {
     color: white;
     padding: 20px;
     width: 100%;
-    text-align: center;
 }
 
 /* Footer styles */
@@ -72,12 +70,13 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
+
 }
 
-/* Responsive design */
 
-/* Devices less than 768px */
+/*Media Queries for 3 different screen sizes */
+
+/* For devices less than 768px */
 @media (max-width: 767px) {
     .header-container {
         flex-direction: column;
@@ -89,7 +88,6 @@ footer {
     }
 
     #container {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -103,7 +101,7 @@ footer {
     }
 }
 
-/* Devices less than 1000px but greater than 768px */
+/* For devices less than 1000px but greater than 768px */
 @media (min-width: 768px) and (max-width: 999px) {
     .header-container {
         justify-content: flex-start;
@@ -111,11 +109,11 @@ footer {
     }
 
     #container {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /* Puffin image and caption side by side */
     figure {
         display: flex;
         flex-direction: row;
@@ -133,12 +131,13 @@ footer {
         max-width: 500px;
     }
 
+    /* Sidebar at the bottom */
     aside {
         width: 100%;
     }
 }
 
-/* Devices 1000px and greater */
+/* For devices 1000px and greater */
 @media (min-width: 1000px) {
     #container {
         display: flex;
@@ -146,6 +145,7 @@ footer {
         justify-content: space-between;
         max-width: 1200px;
         margin: auto;
+        align-items: flex-start;
     }
 
     main {
@@ -155,7 +155,28 @@ footer {
 
     aside {
         flex: 1;
+        min-width: 250px;
+        max-width: 300px;
         text-align: left;
         padding: 20px;
+        align-self: flex-start; 
+    }
+
+    figure {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    figure img {
+        max-width: 300px;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    figcaption {
+        text-align: left;
+        flex: 1;
     }
 }
